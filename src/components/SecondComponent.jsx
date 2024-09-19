@@ -11,19 +11,21 @@ export const SecondComponent = () => {
       "Animales Fantásticos y dónde encontrarlos",
       "Otro libro"
     ];
-    
-    
+ 
     return (
       <>
-        <h1>SecondComponent</h1>
-        <div>
-          <ul>
-            {
-              books.map((book, index) => {
-                return <li key={ index }> { book } </li>
-              })
-            }
-          </ul>
+        <div className="container mt-2 py-2">
+          <h1>SecondComponent</h1>
+          <div>
+            <ul>
+              {
+                books.map((book, index) => {
+                  return <li key={ index }> { book } </li>
+                })
+              }
+            </ul>
+    
+          </div>
         </div>
       </>
     )
