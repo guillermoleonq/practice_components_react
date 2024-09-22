@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 export const Child = (props) => {
 
   const handleChangeName = () => {
-    const newName = prompt("Ingresa un nuevo nombre:");
+    const newName = prompt("Ingresa un nuevo nombre: ");
     if(newName){
       props.setName(newName);
     }
