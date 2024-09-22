@@ -2,6 +2,7 @@ import './App.css';
 import { useState } from 'react';
 
 import { Child } from './components/Child';
+import { FourthComponent } from './components/FourthComponent';
 
 function App() {
 
@@ -9,8 +10,9 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-  
+      <header className="App-header">  
+        <hr className='white-hr' />
+        <FourthComponent />
         <hr className='white-hr' />
         <Child 
           name = {name}

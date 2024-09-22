@@ -1,21 +1,21 @@
-import React from 'react'
+
 
 export const FourthComponent = () => {
 
-  const handleClicked = (e) => {
-    alert("Has hecho click al botón!!");
+  const handleClicked = (e, name) => {
+    alert("Has hecho click en el botón!! " + name);
   }
 
   const handleDoubleClicked = (e) => {
-    alert("Has hecho doble click al botón");
+    alert("Has hecho DOBLE click al botón");
   }
   // onMouseEnter y onMouseLeave con dos funciones
-    const handleMouseEnter = (e) => {
-    console.log("Has entrado a mi caja con el Mouse!! ")
+  const handleMouseEnter = (e) => {
+    alert("Has ENTRADO a la caja con el Mouse!! ");
   }
 
   const handleMouseLeave = (e) => {
-    console.log("Has salido de mi caja!! ")
+    alert("Has SALIDO de la caja!! ");
   }
 
   // onMouseEnter y onMouseLeave con una sola función con Alert
@@ -40,52 +40,65 @@ export const FourthComponent = () => {
 
   return (
     <div>
-        <h2>Eventos en React</h2>
+        <h1>Fourth Component</h1>
         {/* Evento Click */}
         <div>
-          <button onClick={ () => {
-              console.log("Hola, soy un evento Click!!");
-          } }>Haz Click!!</button>
+          <button 
+            className= "btn btn-danger" 
+            onClick={ () => {
+                alert("Hola, soy un evento Click!!");
+            } }>
+            Haz Click!!
+          </button>
         </div>
         <div>
-          <button onClick={ handleClicked }>Aquí también haz Click!!</button>
+          <button 
+            className= "btn btn-success" 
+            onClick={e => handleClicked(e, "Miguel")}
+            >
+            Aquí también haz Click! 
+            </button>
         </div>
 
         {/* Evento Doble Click */}
         <div>
-          <button onDoubleClick={ handleDoubleClicked }>Haz doble click!!</button>
-        </div>
+          <button className="btn btn-info" 
+          onDoubleClick={ handleDoubleClicked }>
+          Haz DOBLE click!!</button>
+        </div><hr />
 
         {/* Evento Mouse Enter y Mouse Leave */}
-        <hr />
-        <div id="box">
-          <div id="box1"
-            onMouseEnter={ handleMouseEnter }
-            onMouseLeave={ handleMouseLeave }
-          >
-            <p>Pasa el Mouse por encima!!!</p>
-          </div>
-          <div id="box2"
+        <div id="box1"
+          onMouseEnter={ e => handleMouseEnter(e) }
+          onMouseLeave={ e => handleMouseLeave(e) }
+        >
+        <p>Pasa el mouse por encima</p><hr />
+        </div>
+
+
+        {/* <div id="box2"
             onMouseEnter={ e => handleMouse(e, "entrado a") }
             onMouseLeave={ e => handleMouse(e, "salido de") }
           >
-            <p>Pasa el Mouse por encima!!!</p>
-          </div>
-          <div id="box3"
+          <p>Pasa el Mouse por encima!!!</p>
+        </div>
+
+        <div id="box3"
             onMouseEnter={ e => handleMouseCl(e, "entrado a") }
             onMouseLeave={ e => handleMouseCl(e, "salido de") }
           >
-            <p>Pasa el Mouse por encima!!!</p>
+          <p>Pasa el Mouse por encima!!!</p>
           </div>
         </div>
-        {/* Evento Focus y Blur se usan en el input */}
+
+        Evento Focus y Blur se usan en el input
         <div className='mt-4'>
           <input type="text"
             onFocus={ insideInput }
             onBlur={ outsideInput }
             placeholder='Escribe tu nombre'
           />
-        </div>
+        </div> */}
     </div>
   )
 }
