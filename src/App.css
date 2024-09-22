@@ -70,4 +70,21 @@
   align-items: center;
 }
 
+.white-hr {
+  border: none;
+  height: 10px;
+  width: 80%;
+  background-color: white;
+  margin: 20x 0;
+}
+
+,white-hr {
+  border:none;
+  height: "200px";
+  width: 80%;
+  background-color: white;
+  margin; 20x 0;
+
+}
+
 
