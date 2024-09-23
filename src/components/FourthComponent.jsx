@@ -1,5 +1,3 @@
-
-
 export const FourthComponent = () => {
 
   const handleClicked = (e, name) => {
@@ -9,7 +7,7 @@ export const FourthComponent = () => {
   const handleDoubleClicked = (e) => {
     alert("Has hecho DOBLE click al botón");
   }
-  // onMouseEnter y onMouseLeave con dos funciones
+
   const handleMouseEnter = (e) => {
     alert("Has ENTRADO a la caja con el Mouse!! ");
   }
@@ -18,25 +16,19 @@ export const FourthComponent = () => {
     alert("Has SALIDO de la caja!! ");
   }
 
-  // onMouseEnter y onMouseLeave con una sola función con Alert
   const handleMouse = (e, action) => {
-    alert(`Has ${action}  la caja`);
+    alert(`Has ${action} la caja `);
+    }
+
+  const handleInsideInput = (e) => {
+    console.log("Estás DENTRO del input, escribe tu nombre!!");
   }
 
-  // onMouseEnter y onMouseLeave con una sola función con  Console Log
-  const handleMouseCl = (e, action) => {
-    console.log(`Has ${action}  la caja`);
+  const handleOutsideInput = (e) => {
+    console.log("Estás FUERA del input, Adiós!!");
   }
 
-  // onFocus
-  const insideInput = (e) => {
-    console.log("Estás dentro del input, escribe tu nombre!!");
-  }
-
-  // onBlur
-  const outsideInput = (e) => {
-    console.log("Estás FUERA del input, Adiós!!")
-  }
+ 
 
   return (
     <div>
@@ -60,45 +52,34 @@ export const FourthComponent = () => {
             </button>
         </div>
 
-        {/* Evento Doble Click */}
         <div>
           <button className="btn btn-info" 
           onDoubleClick={ handleDoubleClicked }>
           Haz DOBLE click!!</button>
         </div><hr />
 
-        {/* Evento Mouse Enter y Mouse Leave */}
         <div id="box1"
+          className="mt-4"
           onMouseEnter={ e => handleMouseEnter(e) }
           onMouseLeave={ e => handleMouseLeave(e) }
         >
         <p>Pasa el mouse por encima</p><hr />
         </div>
 
-
-        {/* <div id="box2"
-            onMouseEnter={ e => handleMouse(e, "entrado a") }
-            onMouseLeave={ e => handleMouse(e, "salido de") }
-          >
-          <p>Pasa el Mouse por encima!!!</p>
+        <div id="box2"
+          className="mt-4"
+          onMouseEnter={ e => handleMouse(e, "entrado a")}
+          onMouseLeave={ e => handleMouse(e, "salido de")}
+        >
+          <p>Pasa el MOUSE por encima</p><hr />
         </div>
 
-        <div id="box3"
-            onMouseEnter={ e => handleMouseCl(e, "entrado a") }
-            onMouseLeave={ e => handleMouseCl(e, "salido de") }
-          >
-          <p>Pasa el Mouse por encima!!!</p>
-          </div>
-        </div>
-
-        Evento Focus y Blur se usan en el input
-        <div className='mt-4'>
+        <div className="mt-4">
           <input type="text"
-            onFocus={ insideInput }
-            onBlur={ outsideInput }
-            placeholder='Escribe tu nombre'
+          onFocus={ e => handleInsideInput(e)}
+          onBlur={ e => handleOutsideInput(e)}
           />
-        </div> */}
+        </div>
     </div>
   )
 }
